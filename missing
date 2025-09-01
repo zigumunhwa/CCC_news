@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독][속보] 전남대학교 CCC 자생대 대표 전도경 순장 실종</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            line-height: 1.7;
+            background: #fafafa;
+            color: #333;
+        }
+        
+        .top-bar {
+            background: #d32f2f;
+            color: white;
+            padding: 0.3rem 0;
+            font-size: 0.8rem;
+            text-align: center;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .main-header {
+            background: white;
+            border-bottom: 3px solid #e0e0e0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #d32f2f;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .live-badge {
+            background: linear-gradient(45deg, #ff4444, #ff6b6b);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(255, 68, 68, 0.5); }
+            to { box-shadow: 0 0 20px rgba(255, 68, 68, 0.8); }
+        }
+        
+        .search-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .search-box {
+            padding: 0.6rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            width: 250px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #d32f2f;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+        
+        .menu-bar {
+            background: #2c2c2c;
+            padding: 0;
+        }
+        
+        .menu-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .menu-item {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .menu-item a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item a:hover {
+            background: #d32f2f;
+            transform: translateY(-2px);
+        }
+        
+        .menu-item a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .menu-item a:hover::before {
+            left: 100%;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        
+        .article-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .article-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+        }
+        
+        .breaking-header {
+            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .breaking-icon {
+            font-size: 1.5rem;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .breaking-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .article-body {
+            padding: 2.5rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .article-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.3;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            word-break: keep-all;
+        }
+        
+        .article-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .reporter-name {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/><circle cx="25" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .article-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.8rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #d32f2f;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #495057;
+        }
+        
+        .quote-section {
+            background: #f8f9fa;
+            border-left: 4px solid #d32f2f;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .quote-section::before {
+            content: '"';
+            font-size: 4rem;
+            color: #d32f2f;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-family: serif;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .widget-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .trending-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .trending-item:hover {
+            background: #f8f9fa;
+            margin: 0 -1.5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            display: block;
+        }
+        
+        .trending-link:hover {
+            color: #d32f2f;
+        }
+        
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .share-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .kakao { background: #fee500; color: #3c1e1e; }
+        .naver { background: #03c75a; color: white; }
+        .facebook { background: #1877f2; color: white; }
+        
+        .footer {
+            background: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer h3 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .article-title {
+                font-size: 1.8rem;
+            }
+            
+            .menu-container {
+                flex-wrap: wrap;
+            }
+            
+            .menu-item {
+                flex: 0 0 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        🔥 실시간 속보: 대한민국 주요 뉴스를 가장 빠르게 전해드립니다
+    </div>
+    
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="#" class="logo">KoreaTimes</a>
+                <div class="live-badge">Live</div>
+            </div>
+            <div class="search-area">
+                <input type="text" class="search-box" placeholder="뉴스 검색...">
+                <button style="background: #d32f2f; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 20px; cursor: pointer;">🔍</button>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="menu-bar">
+        <div class="menu-container">
+            <div class="menu-item"><a href="#">정치</a></div>
+            <div class="menu-item"><a href="#">경제</a></div>
+            <div class="menu-item"><a href="#">사회</a></div>
+            <div class="menu-item"><a href="#">국제</a></div>
+            <div class="menu-item"><a href="#">문화</a></div>
+            <div class="menu-item"><a href="#">스포츠</a></div>
+            <div class="menu-item"><a href="#">IT</a></div>
+            <div class="menu-item"><a href="#">연예</a></div>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <article class="article-container">
+            <div class="breaking-header">
+                <div class="breaking-icon">🚨</div>
+                <div class="breaking-text">단독 속보</div>
+            </div>
+            
+            <div class="article-body">
+                <div class="article-category">사건사고</div>
+                
+                <h1 class="article-title">[단독][속보] 전남대학교 CCC 자생대 대표 전도경 순장 실종</h1>
+                
+                <p class="article-subtitle">협박성 쪽지 발견 후 연락 두절, 납치 가능성 제기되며 경찰 수사 착수</p>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <span>👨‍💼</span>
+                        <span class="reporter-name">박건 사회부 기자</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>2025.09.01 22:30</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>👁️</span>
+                        <span id="viewCount">1,523</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>💬</span>
+                        <span>87</span>
+                    </div>
+                </div>
+                
+                <div class="hero-image" style="background-image: url('https://github.com/user-attachments/assets/3ad4960e-1d92-4cbe-9f86-259736bd4fcf'); background-size: cover; background-position: center;">
+                    <div class="hero-content" style="background: rgba(0,0,0,0.5); padding: 2rem; border-radius: 10px;">
+                        <div>⛪ 전남대학교 CCC 동아리</div>
+                        <div style="font-size: 1rem; margin-top: 0.5rem; opacity: 0.9;">(자료사진)</div>
+                    </div>
+                </div>
+                
+                <div class="article-content">
+                    <p><strong>전남대학교 기독교 동아리 CCC(Campus Crusade for Christ) 자생대 대표를 맡고 있는 전도경(21, 화학과 2학년, 24학번) 순장이 오늘(9월 1일) 오후 9시경 납치된 것으로 확인됐다.</strong></p>
+                    
+                    <p>전남대학교 관계자에 따르면, 전 순장은 오늘 오후 9시경 납치범이 남긴 것으로 추정되는 <strong>"너희 단대순장은 우리가 데려간다, 찾을 수 있다면 찾아보시던지"</strong>라는 내용의 협박성 쪽지가 발견된 이후 연락이 완전히 두절된 상태다.</p>
+                    
+                    <p>함께 임역원으로 섬기고 있는 노태희(21) 순장은 "오후 9시경 전도경 순장을 찾기 위해 열심을 다해 찾아보았지만 발견하지 못했다"며 "그 무서운 쪽지를 발견하고 나서 더욱 심각한 상황임을 깨달았다"고 전했다.</p>
+                    
+                    <div class="quote-section">
+                        <p style="margin-top: 1.5rem;">"다른 단대순장들에게 도움을 요청했으나 도움을 줄 수 없다는 답변을 받아 더욱 절망적이다. 단대 지체들의 적극적인 도움과 관심이 절실히 필요한 상황"이라고 노태희 순장은 강조했다.</p>
+                    </div>
+                    
+                    <p>노태희 순장이 오후 10시경 광주 북구 경찰서에 납치신고를 접수한 상태다. 전 순장은 키가 작은 편이며, 납치 당시 검은색 옷과 십자가 목걸이를 착용하고 있었던 것으로 알려졌다.</p>
+                    
+                    <p>전남대학교 CCC는 매주 목요일 목요채플을 참석하고 있으며, 전 순장은 지난 8월 단대 대표로 임명되어 약 40여 명의 지체들을 이끌어왔다. 동아리 회원들은 "항상 밝고 성실한 모습이었는데 갑자기 이런 일이 일어나 모두가 충격을 받고 있다"고 전했다.</p>
+                    
+                    <div class="highlight-box">
+                        <strong>논란의 중심</strong><br>
+                        그러나 전 순장의 아빠순장인 정승유(23, 생명과학기술학부 22학번) 순장은 아들의 실종 소식에 "저도 납치당했는데요"라며 장난스런 반응을 보인 것으로 알려져 단대 지체들의 강한 규탄을 받고 있는 상황이다. 한 지체는 "이런 심각한 상황에서 그런 발언을 하다니 이해할 수 없다"며 분노를 표했다.
+                    </div>
+                    
+                    <p>경찰 관계자는 "납치범이 남긴 협박성 쪽지와 CCTV 분석, 휴대폰 위치 추적 등을 통해 긴급 수사를 진행하고 있으며, 피해자의 안전한 구출을 위해 모든 역량을 집중하고 있다"고 밝혔다.</p>
+                    
+                    <p>전 순장과 관련한 정보가 있는 시민들은 광주 북구 경찰서(☎062-XXX-XXXX) 또는 112로 연락하면 된다.</p>
+                </div>
+                
+                <div class="social-share">
+                    <button class="share-btn kakao">📱 카카오톡</button>
+                    <button class="share-btn naver">📰 네이버</button>
+                    <button class="share-btn facebook">👍 페이스북</button>
+                </div>
+            </div>
+        </article>
+        
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">🔥 실시간 인기뉴스</h3>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">1. 전남대 학생 납치 사건 긴급 수사</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">2. 광주 지역 대학가 안전 대책 논의</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">3. CCC 동아리 관계자들 충격에 빠져</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">4. 대학생 대상 범죄 증가 추세</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">5. 경찰, 대학가 순찰 강화 검토</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3 class="widget-title">📊 오늘의 주요 이슈</h3>
+                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚨</div>
+                    <div style="font-weight: bold; color: #d32f2f;">안전 이슈</div>
+                    <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">대학가 안전 관련 뉴스 급상승</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3 class="widget-title">🎯 관련 뉴스</h3>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">대학생 안전 수칙과 대응 방법</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">캠퍼스 내 CCTV 설치 현황</a>
+                </div>
+                <div class="trending-item">
+                    <a href="#" class="trending-link">종교 동아리 활동 안전 가이드라인</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>KoreaTimes</h3>
+            <p>대한민국 대표 종합 뉴스 미디어</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                📧 contact@koreatimes.kr | ☎️ 1588-1234<br>
+                © 2024 KoreaTimes. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // 실시간 조회수 업데이트
+        let currentViews = 1523;
+        const viewElement = document.getElementById('viewCount');
+        
+        setInterval(() => {
+            if (Math.random() < 0.4) {
+                currentViews += Math.floor(Math.random() * 5) + 1;
+                viewElement.textContent = currentViews.toLocaleString();
+            }
+        }, 3000);
+        
+        // 소셜 공유 버튼 이벤트
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const platform = this.textContent.includes('카카오') ? '카카오톡' : 
+                                this.textContent.includes('네이버') ? '네이버' : '페이스북';
+                
+                // 버튼 애니메이션
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-3px)';
+                }, 100);
+                
+                alert(`${platform} 공유 기능이 실행됩니다!`);
+            });
+        });
+        
+        // 검색 기능
+        document.querySelector('.search-box').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                alert(`"${this.value}" 검색 결과를 불러오는 중...`);
+            }
+        });
+        
+        // 스크롤 효과
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
